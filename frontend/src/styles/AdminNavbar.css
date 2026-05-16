@@ -1,0 +1,63 @@
+/* ../styles/AdminNavbar.css */
+
+.custom-admin-navbar {
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  padding: 12px 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.brand-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #1f2937 !important;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand-icon {
+  font-size: 1.8rem;
+}
+
+.nav-link-list {
+  gap: 6px;
+  margin-left: 20px;
+}
+
+.custom-nav-link {
+  color: #6b7280;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.custom-nav-link:hover {
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+.custom-nav-link.active {
+  background-color: #eff6ff;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.btn-logout {
+  background-color: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fee2e2;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-logout:hover {
+  background-color: #fee2e2;
+}

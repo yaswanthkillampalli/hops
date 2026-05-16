@@ -1,0 +1,198 @@
+/* src/styles/Parking.css */
+.parking-page {
+  animation: fadeIn 0.4s ease-out;
+  background-color: #f9fafb;
+  min-height: calc(100vh - 70px);
+}
+
+/* Modern Card Foundation */
+.modern-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.modern-card-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid #f3f4f6;
+  background-color: #ffffff;
+}
+
+.modern-card-header h5 { margin: 0; font-weight: 700; color: #111827; font-size: 1.15rem; }
+.modern-card-body { padding: 24px; }
+.last-mb-none:last-child { margin-bottom: 0 !important; }
+
+/* Metrics Cards */
+.metric-card {
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  height: 100%;
+  transition: transform 0.2s;
+}
+.metric-card:hover { transform: translateY(-2px); }
+.metric-label { color: #6b7280; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; margin-bottom: 8px; }
+.metric-value { margin: 0; font-weight: 800; font-size: 2rem; }
+
+.metric-card-primary { border-bottom: 4px solid #2563eb; }
+.metric-card-primary .metric-value { color: #2563eb; }
+.metric-card-success { border-bottom: 4px solid #10b981; }
+.metric-card-success .metric-value { color: #10b981; }
+.metric-card-danger { border-bottom: 4px solid #ef4444; }
+.metric-card-danger .metric-value { color: #ef4444; }
+.metric-card-warning { border-bottom: 4px solid #f59e0b; }
+.metric-card-warning .metric-value { color: #f59e0b; }
+
+/* Parking Bays (Grid elements) */
+.parking-bay {
+  width: 80px;
+  height: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  border: 2px dashed #cbd5e1;
+  border-top: 4px solid #94a3b8; /* Represents the wall/curb */
+  background: #ffffff;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.parking-bay:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+}
+
+.parking-bay-available { border-top-color: #10b981; }
+.parking-bay-available .bay-status { color: #10b981; }
+
+.parking-bay-vip { border-top-color: #f59e0b; background: #fffbeb; }
+.parking-bay-vip .bay-status { color: #b45309; }
+
+.bay-number { font-size: 1.25rem; font-weight: 800; color: #1e293b; }
+.bay-status { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-top: 4px; letter-spacing: 0.5px; }
+
+/* Parking Record Cards (List) */
+.parking-record-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+  transition: all 0.2s ease;
+}
+
+.parking-record-card:hover { box-shadow: 0 8px 16px rgba(0,0,0,0.06); transform: translateY(-1px); }
+
+.border-highlight-dark { border-left: 4px solid #1f2937; }
+.border-highlight-info { border-left: 4px solid #0ea5e9; background: #f0f9ff; }
+.border-highlight-success { border-left: 4px solid #10b981; }
+
+.detail-label { color: #64748b; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; margin-bottom: 2px; }
+.detail-value { color: #0f172a; font-weight: 500; font-size: 0.95rem; }
+
+/* Forms & Inputs */
+.modern-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+  background: #ffffff;
+  color: #1f2937;
+}
+
+.modern-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+  outline: none;
+}
+
+.modern-label {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #4b5563;
+  margin-bottom: 8px;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Custom Buttons */
+.modern-btn {
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.modern-btn-sm { padding: 8px 14px; font-size: 0.85rem; border-radius: 8px; }
+.modern-btn:active { transform: scale(0.98); }
+.modern-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.modern-btn-primary { background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #fff; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2); }
+.modern-btn-primary:hover:not(:disabled) { box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3); transform: translateY(-1px); }
+
+.modern-btn-success { background: linear-gradient(135deg, #10b981, #059669); color: #fff; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2); }
+.modern-btn-success:hover:not(:disabled) { box-shadow: 0 6px 16px rgba(16, 185, 129, 0.3); transform: translateY(-1px); }
+
+.modern-btn-outline { background: #ffffff; color: #3b82f6; border: 1px solid #3b82f6; }
+.modern-btn-outline:hover:not(:disabled) { background: #eff6ff; }
+
+/* Badges & Alerts */
+.modern-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-block;
+}
+
+.badge-primary { background: #eff6ff; color: #1d4ed8; }
+.badge-info { background: #f0f9ff; color: #0284c7; border: 1px solid #bae6fd; }
+.badge-warning { background: #fffbeb; color: #b45309; }
+.badge-danger { background: #fef2f2; color: #b91c1c; }
+.badge-success { background: #ecfdf5; color: #047857; }
+.badge-dark { background: #1e293b; color: #f8fafc; }
+.badge-secondary { background: #f1f5f9; color: #475569; }
+
+.modern-alert { padding: 12px 16px; border-radius: 8px; margin-bottom: 16px; font-weight: 500; font-size: 0.95rem; }
+.modern-alert-danger { background-color: #fef2f2; color: #b91c1c; border: 1px solid #fecaca; }
+
+/* Documentation / Reference Block */
+.workflow-box {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  height: 100%;
+  border: 1px solid #e2e8f0;
+}
+
+.modern-list {
+  padding-left: 20px;
+  margin: 0;
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.modern-list li { margin-bottom: 8px; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
