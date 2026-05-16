@@ -133,6 +133,10 @@ export async function registerStaffMember(data) {
   return api.post("/api/v1/staff/register", data);
 }
 
+export async function registerBusinessAdmin(data) {
+  return api.post("/api/v1/business/register", data);
+}
+
 export async function getMyStaffProfile() {
   return api.get("/api/v1/staff/me");
 }
