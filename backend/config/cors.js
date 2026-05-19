@@ -5,6 +5,8 @@ const allowedOrigins = (process.env.ALLOWED_ORIGINS || '')
 
 const corsOptions = {
 	origin: (origin, callback) => {
+		console.log('Incoming Origin:', origin);
+        console.log('Allowed Array:', allowedOrigins);
 		if (!origin || allowedOrigins.includes(origin)) {
 			return callback(null, true);
 		}
