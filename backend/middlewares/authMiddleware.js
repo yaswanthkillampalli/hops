@@ -12,10 +12,6 @@ const authMiddleware = async (
   try {
     let token;
 
-    // =====================================
-    // Extract Token
-    // =====================================
-
     if (
       req.headers.authorization &&
       req.headers.authorization.startsWith(
@@ -26,10 +22,6 @@ const authMiddleware = async (
         req.headers.authorization.split(" ")[1];
     }
 
-    // =====================================
-    // No Token
-    // =====================================
-
     if (!token) {
       return res.status(401).json({
         success: false,
@@ -37,18 +29,10 @@ const authMiddleware = async (
       });
     }
 
-    // =====================================
-    // Verify Token
-    // =====================================
-
     const decoded = jwt.verify(
       token,
       process.env.JWT_SECRET
     );
-
-    // =====================================
-    // BUSINESS AUTH
-    // =====================================
 
     if (decoded.role === "business") {
       const business =
@@ -68,10 +52,6 @@ const authMiddleware = async (
       req.userRole = "business";
     }
 
-    // =====================================
-    // STAFF AUTH
-    // =====================================
-
     else if (decoded.role === "staff") {
       const staff = await Staff.findById(
         decoded.id
@@ -89,10 +69,6 @@ const authMiddleware = async (
       req.userRole = "staff";
     }
 
-    // =====================================
-    // GUEST AUTH
-    // =====================================
-
     else if (decoded.role === "guest") {
       const guest = await Guest.findById(
         decoded.id
@@ -109,10 +85,6 @@ const authMiddleware = async (
 
       req.userRole = "guest";
     }
-
-    // =====================================
-    // Invalid Role
-    // =====================================
 
     else {
       return res.status(401).json({

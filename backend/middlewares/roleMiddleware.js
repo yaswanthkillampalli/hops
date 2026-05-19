@@ -1,20 +1,3 @@
-/*
- Flexible authorization middleware
-
- Usage examples:
- - authorizeAccess(['admin','manager','reception','management'])
-	 -> allows staff with role in [admin,manager] OR department in [reception,management]
-
- - authorizeAccess(['business'])
-	 -> allows authenticated business users
-
- - authorizeAccess(['any'])
-	 -> allows any authenticated user (useful when route requires auth but any role is fine)
-
- The array may include staff roles (admin,manager,supervisor,staff), staff departments
- (reception,management,housekeeping,...), or top-level userRoles (business,guest).
-*/
-
 const authorizeAccess = (allowed = []) => {
 	// copy to avoid mutation
 	const allowedSet = new Set(allowed || []);

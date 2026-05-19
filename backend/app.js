@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const corsOptions = require("./config/cors");
 
 const businessRoutes = require("./routes/businessRoutes");
 const guestRoutes = require("./routes/guestRoutes");
@@ -18,8 +19,7 @@ const adminRoutes = require("./routes/adminRoutes");
 
 const app = express();
 
-app.use(cors());
-
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.use("/api/v1/business", businessRoutes);
