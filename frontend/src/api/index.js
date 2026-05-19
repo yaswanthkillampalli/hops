@@ -206,4 +206,9 @@ export async function updateFoodOrderTiming(data) {
   return api.put("/api/v1/food-order/update-timing", data);
 }
 
+// Business / Auth
+export async function loginBusiness(data) {
+  return api.post("/api/v1/business/login", data);
+}
+
 export default api;

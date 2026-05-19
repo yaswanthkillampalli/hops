@@ -1,6 +1,6 @@
 // AdminLogin.jsx
 import { useState } from "react";
-import axios from "axios";
+import { loginBusiness } from "../api";
 import { useNavigate } from "react-router-dom";
 import { setToken } from "../utils/auth";
 import '../styles/AdminLogin.css'; // Make sure this path points to your new CSS file
@@ -24,7 +24,7 @@ export default function AdminLogin() {
     setIsLoading(true); // Disable the button while we wait for the server
     
     try {
-      const res = await axios.post("http://localhost:5000/api/v1/business/login", { email, password });
+      const res = await loginBusiness({ email, password });
       
       if (res.data && res.data.token) {
         setToken(res.data.token);
