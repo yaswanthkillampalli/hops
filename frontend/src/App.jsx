@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import AdminLogin from "./pages/AdminLogin";
 import AdminRegister from "./pages/AdminRegister";
 import AdminDashboard from "./pages/AdminDashboard";
+import StaffLogin from "./pages/StaffLogin";
+import GuestLogin from "./pages/GuestLogin";
 import Bookings from "./pages/Bookings";
 import Rooms from "./pages/Rooms";
 import Tasks from "./pages/Tasks";
@@ -13,6 +15,8 @@ import Staff from "./pages/Staff";
 import Analytics from "./pages/Analytics";
 import AdminNavbar from "./components/AdminNavbar";
 import { getToken } from "./utils/auth";
+import StayHopsLanding from "./pages/StayHopsLanding";
+import Demo from "./pages/Demo";
 
 function AdminLayout({ children }) {
   return (
@@ -32,6 +36,10 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path='/' element={<StayHopsLanding />} />
+        <Route path="/demo" element={<Demo />} />
+        <Route path="/staff/login" element={<StaffLogin />} />
+        <Route path="/guest/login" element={<GuestLogin />} />
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin/register" element={<AdminRegister />} />
         <Route path="/admin">

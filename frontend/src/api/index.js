@@ -211,4 +211,12 @@ export async function loginBusiness(data) {
   return api.post("/api/v1/business/login", data);
 }
 
+export async function loginStaff(data) {
+  return api.post("/api/v1/staff/login", data);
+}
+
+export async function loginGuest(data) {
+  return api.post("/api/v1/guest/login", data);
+}
+
 export default api;
